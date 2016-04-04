@@ -1,0 +1,26 @@
+<DOCTYPE HTML>
+    <html>
+
+    <head>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="httpapp.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    </head>
+
+    <body>
+        <div ng-app="app" ng-controller="uCtrl">
+            <form name="uform" ng-submit="submit()">
+                <input name="name" type="text" ng-model="name" Required username-validator>
+                <div ng-Messages="uform.name.$error">
+                    <div ng-Message="uniqueUsername">
+                        username not available
+                    </div>
+                </div>
+                <input type="submit" ng-disabled="uform.$invalid">
+            </form>
+           
+            <!-- {{uform.$pending}} -->
+        </div>
+    </body>
+
+    </html>

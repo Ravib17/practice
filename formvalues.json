@@ -1,0 +1,26 @@
+{
+    "$error": {
+        "required": [{
+            "$validators": {},
+            "$asyncValidators": {},
+            "$parsers": [],
+            "$formatters": [null],
+            "$viewChangeListeners": [],
+            "$untouched": true,
+            "$touched": false,
+            "$pristine": true,
+            "$dirty": false,
+            "$valid": false,
+            "$invalid": true,
+            "$error": { "required": true },
+            "$name": "",
+            "$options": null
+        }]
+    },
+    "$name": "uform",
+    "$dirty": false,
+    "$pristine": true,
+    "$valid": false,
+    "$invalid": true,
+    "$submitted": false
+}

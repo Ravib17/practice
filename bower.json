@@ -1,0 +1,22 @@
+{
+  "name": "practice",
+  "authors": [
+    "ravi <ravihbhatia@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.2.18",
+    "requirejs": "^2.2.0"
+  }
+}
