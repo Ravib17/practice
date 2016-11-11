@@ -11,7 +11,9 @@ angular.module('app').directive('usernameValidator', function($http, $q, $timeou
     return {
         require: 'ngModel',
         link: function(scope, element, attrs, ngModel) {
-            ngModel.$asyncValidators.uniqueUsername = function(modelValue, viewValue) {
+                ngModel.$asyncValidators.uniqueUsername = function(modelValue, viewValue) {
+                    console.log("hkhkakha");
+
                 var value = modelValue || viewValue;
                 return $http.get('data.txt').then(function(response) {
                     var persons = response.data;
