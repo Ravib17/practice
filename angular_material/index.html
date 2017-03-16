@@ -1,0 +1,169 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="js/myapp.js"></script>
+    <script src="app.js"></script>
+
+</head>
+
+<body >
+<div ng-app="myApp" ng-controller='appCtrl' ng-cloak>
+    <!-- <md-subheader class="md-primary">Fruits</md-subheader>
+		<h1 class="md-display-3">Headline</h1>
+		<h2 class="md-display-1">{{title}}</h2>
+		<h3 class="md-subhead">Headline</h3>
+		<md-button class="md-raised">Button</md-button>
+		<md-button class="md-fab md-mini" aria-label="Mini FAB"></md-button>
+		<md-button class="md-raised" style="background-color:red"> Raised Button </md-button>
+		<div> -->
+    <div layout="row" layout-padding class="bg-dark-blue nav-dark" layout-align="space-between center">
+        <div>
+            <md-button>Home</md-button>
+            <md-button>Item 1</md-button>
+            <md-button>Item 2</md-button>
+            <md-menu>
+                <md-button md-menu-origin ng-click="$mdOpenMenu()">Help</md-button>
+                <md-menu-content width="2">
+                    <md-menu-item>
+                        <md-button>Help</md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>About</md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+        <div class="nav-buttons">
+            <md-button class="md-raised md-primary">My profile</md-button>
+            <md-button class="md-raised md-warn">Log Out</md-button>
+        </div>
+        </md-toolbar>
+        <form name="colorForm">
+            <md-input-container>
+                <label>Favorite Color</label>
+                <input name="favoriteColor" ng-model="favoriteColor" required>
+                <div ng-messages="colorForm.favoriteColor.$error">
+                    <div ng-message="required">This is required!</div>
+                </div>
+            </md-input-container>
+        </form>
+        <md-button class="md-primary">Click me</md-button>
+        <md-button class="md-accent">or maybe me</md-button>
+        <md-button class="md-warn">Careful</md-button>
+        <md-button class="md-primary">Click me</md-button>
+        <md-button class="md-primary md-hue-1">Click me</md-button>
+        <md-button class="md-primary md-hue-2" ng-click="openSd()">Click me 1</md-button>
+        <md-chips>
+            <md-chip>Hockey</md-chip>
+            <md-chip>Lacrosse</md-chip>
+            <md-chip>Baseball</md-chip>
+        </md-chips>
+          <md-button ng-click="showAlert()" class="md-raised md-warn">
+        Employee Aler
+        </md-button>
+
+        </div>
+                <md-divider md-inset>hello</md-divider>
+
+                  <div class="lock-size" layout="row" layout-align="center center">
+       <md-fab-speed-dial md-open="true" class="md-scale md-fab-bottom-right" ng-class="{ 'md-hover-full': false }" ng-mouseenter="isOpen=true" ng-mouseleave="isOpen=false" md-direction="up" ng-class='selectedMode'>
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-warn">
+            <md-icon md-svg-src="svg/high-volume.svg"></md-icon>
+          </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="svg/next-button.svg" aria-label="Twitter"></md-icon>
+          </md-button>
+          <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="svg/next-button.svg" aria-label="Facebook"></md-icon>
+          </md-button>
+          <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="svg/next-button.svg" aria-label="Google Hangout"></md-icon>
+          </md-button>
+        </md-fab-actions>
+</md-fab-speed-dial>
+    </div>
+
+<div  >
+  <md-content class="md-padding" layout-xs="column" layout="row">
+    <div flex-xs flex-gt-xs="50" layout="column">
+
+      <md-card>
+      		<md-toolbar md-scroll-shrink>
+    <div class="md-toolbar-tools">My Messages</div>
+  </md-toolbar>
+             <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card with image</span>
+            <span class="md-subhead">Large</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-lg card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+      </md-card>
+      <md-card>
+      
+</div>
+
+</div>
+<!--<div  ng-app="app" ng-controller='appCtrl as ctrl' ng-cloak>
+  <div class="lock-size" layout="row" layout-align="center center">
+       <md-fab-speed-dial md-open="false" md-direction="up" ng-class='ctrl.selectedMode'>
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-warn">
+            <md-icon md-svg-src="svg/high-volume.svg"></md-icon>
+          </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="svg/next-button.svg" aria-label="Twitter"></md-icon>
+          </md-button>
+          <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="svg/next-button.svg" aria-label="Facebook"></md-icon>
+          </md-button>
+          <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="svg/next-button.svg" aria-label="Google Hangout"></md-icon>
+          </md-button>
+        </md-fab-actions>
+</md-fab-speed-dial>
+    </div>
+</div>-->
+ <div layout="row">
+            <md-toolbar>
+                <md-button class="md-icon-button" aria-label="Home">
+                    <md-icon md-svg-src="" aria-label="home"></md-icon>
+                    SkilltoJob
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Profile">
+                   Registration
+                </md-button>
+            </md-toolbar>
+        </div>
+<md-menu>
+      <md-button aria-label="Open menu with custom trigger" class="md-icon-button" ng-mouseenter="$mdMenu.open()">
+	 abc
+        <md-icon md-menu-origin ></md-icon>
+      </md-button>
+      <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+        <md-menu-item ng-repeat="item in [1, 2, 3]">
+          <md-button>
+            Option {{item}}
+          </md-button>
+        </md-menu-item>
+    </md-menu>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<head>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="PromiseApp.min.js"></script>
+
+</head>
+<div ng-app="PromiseApp" ng-controller="PromiseCtrl as PCtrl" >
+<button ng-click="PCtrl.onClickButton()">click me</button>
+{{PCtrl.displayText}}
+</div>

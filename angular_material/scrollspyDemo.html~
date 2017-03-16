@@ -1,0 +1,35 @@
+<html>
+<head>
+<style>
+.active {
+color:RED;
+ }
+</style>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="bower_components/ng-ScrollSpy.js/src/ng-ScrollSpy.js"></script>
+    <script src="scrollspyDemo.js"></script>
+</head>
+
+
+
+<body ng-app="ngScrollSpy">
+<div data-scrollspy-listen="div1">div 1</div>
+<div>
+<img id="div1" data-scrollspy-broadcast src="http://www.cfau-pd.net/images/full-wallpaper/full-wallpaper-11.jpg"/>
+</div>
+<div data-scrollspy-listen="div2">div 2<div>
+<div>
+<img id="div2" data-scrollspy-broadcast src="http://www.wallpapereast.com/static/images/hd-wallpaper-6006-6338-hd-wallpapers_hnKnJzN.jpg"/>
+</div>
+<div data-scrollspy-listen="div3">div 3</div>
+<div>
+<img id="div3" data-scrollspy-broadcast src="http://www.wallpapereast.com/static/images/Anime-Wallpaper-HD-471.jpg" />
+</div>
+   
+</body>
+</html>

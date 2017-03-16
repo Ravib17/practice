@@ -1,0 +1,29 @@
+<head>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="/home/ravi/Downloads/font-awesome-4.6.14.6.1/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="acApp.js"></script>
+
+</head>
+bjl
+<div ng-app="acApp" ng-Controller="acCtrl as JListCtrl">
+<md-autocomplete  id="search_autocomplete_element" md-menu-class="search-autocomplete-menu" flex="grow" md-min-length="1" md-input-minlength="1" md-no-cache="false" md-input-id="searchJob" md-input-name="searchJob" md-selected-item="JListCtrl.selectedAutoCompleteJob" md-selected-item-change="JListCtrl.selectedItemChange(item)" md-search-text="JListCtrl.jobSearchText" md-items="item in JListCtrl.jobQuerySearch(JListCtrl.jobSearchText)" md-search-text-change="JListCtrl.jobSearchTextChange(JListCtrl.jobSearchText)" md-item-text="item.jobsTitle" placeholder="&#xf002;
+ Search">
+                <div class="dropdown-result-div" layout="row" ng-click="">
+                    <div layout="column" flex class="sc-clg-search-info">
+                        <span md-highlight-text="JListCtrl.jobSearchText" md-highlight-flags="i" class="canjoblist-search-name">{{ item}}</span>
+                        <span class="appliedJob-jobid-span" md-highlight-text="JListCtrl.jobSearchText" md-highlight-flags="i">{{item}</span>
+                    </div>
+                </div>
+                <md-not-found>
+                    No Matches Found.
+                </md-not-found>
+            </md-autocomplete>
+              {{JListCtrl.value}}
+
+            </div>

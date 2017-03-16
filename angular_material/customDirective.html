@@ -1,0 +1,14 @@
+<html>
+<head>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="CustomDirective.js"></script>
+</head>
+<body ng-app="directiveApp" ng-controller="CustomDirective">
+{{optionArray}}
+<div create-filter="{{optionArray}}" selected-option="option 3" modelValue="array1Value"></div>{{array1Value}}
+<div create-filter="{{optionArray}}" selected-option="option 4" modelValue="array2Value" ></div>{{array2Value}}
+<input type="text" id="inputbox" ng-model="textvalue"/>
+<div id="inputbo"></div>
+</body>
+</html>
+

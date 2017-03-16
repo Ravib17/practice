@@ -1,0 +1,113 @@
+<html>
+<head>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+</head>
+<script src="app.js"></script>
+<script src="js/myapp.js"></script>
+
+<body>
+    <div ng-app="app" ng-cloak>
+       
+
+
+<div ng-controller="appCtrl as ctrl" layout="column" >
+  <md-content class="md-padding">
+    <form ng-submit="$event.preventDefault()">
+       <md-chips ng-model="ctrl.selectedStates" md-autocomplete-snap >
+      <md-autocomplete
+          md-selected-item="ctrl.selectedItem"
+          md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+          md-search-text="ctrl.searchText"
+          md-items="item in ctrl.querySearch(ctrl.searchText)"
+          md-item-text="item.display"
+          md-min-length="0"
+          placeholder="What is your favorite US state?">
+        
+          <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+          
+          </md-autocomplete>
+          <md-chip-template>
+          <strong>{{$chip.display}}</strong>
+          </md-chip-template>
+      </md-chips>
+
+      
+    </form>
+  </md-content>
+<div class="lock-size" layout="row"  layout-align="center center">
+       <md-fab-speed-dial md-open="false" md-direction="up" ng-class='ctrl.selectedMode'>
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-warn">
+            <md-icon md-svg-src="svg/high-volume.svg"></md-icon>
+          </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="svg/next-button.svg" aria-label="Twitter"></md-icon>
+          </md-button>
+          <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="svg/next-button.svg" aria-label="Facebook"></md-icon>
+          </md-button>
+          <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="svg/next-button.svg" aria-label="Google Hangout"></md-icon>
+          </md-button>
+        </md-fab-actions>
+</md-fab-speed-dial>
+    </div>
+    
+
+</div>
+
+<md-button class="md-raised"> Raised Button </md-button>
+<!-- <div ng-controller="appCtrl as Ctrl" >
+<md-chips ng-model="Ctrl.selectedStates" name="fruitName"  md-max-chips="5">
+        <md-chip-template>
+          <strong>{{$chip}}</strong>
+          </md-chip-template>
+      </md-chips>
+ -->
+
+<md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+
+
+</div>
+ <div ng-app="myApp" ng-controller="appCtrl">
+<div class="lock-size" layout="row" layout-align="center center">
+       <md-fab-speed-dial md-open="false" md-direction="up" ng-class='ctrl.selectedMode'>
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab md-warn">
+            <md-icon md-svg-src="svg/high-volume.svg"></md-icon>
+          </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="svg/next-button.svg" aria-label="Twitter"></md-icon>
+          </md-button>
+          <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="svg/next-button.svg" aria-label="Facebook"></md-icon>
+          </md-button>
+          <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+            <md-icon md-svg-src="svg/next-button.svg" aria-label="Google Hangout"></md-icon>
+          </md-button>
+        </md-fab-actions>
+</md-fab-speed-dial>
+<form name="colorForm">
+  <md-input-container>
+    <label>Favorite Color</label>
+    <input name="favoriteColor" ng-model="favoriteColor" required>
+    <div ng-messages="userForm.lastName.$error">
+      <div ng-message="required">This is required!</div>
+    </div>
+  </md-input-container>
+</form>
+    </div>
+
+</div>
+   
+</body>
+</html>

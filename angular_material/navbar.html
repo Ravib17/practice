@@ -1,0 +1,84 @@
+<html>
+<head>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="js/sapp.js"></script>
+    
+</head>
+<body>
+<div ng-app="sapp">
+    <div layout="row" ng-controller="appCtrl as ctrl">
+  <md-sidenav md-component-id="right" class="md-sidenav-right" md-disable-backdrop="true" >
+    Left Nav!
+     <form>
+      <md-input-container>
+        <label for="testInput">Test input this</label>
+        <input id="testInput" ng-model="data" md-sidenav-focus type="text">
+      </md-input-container>
+    </form>
+    <form>
+      <md-input-container>
+        <label for="testInput">Test input</label>
+        <input id="testInput" ng-model="data" type="text">
+      </md-input-container>
+    </form>
+  </md-sidenav>
+  <md-content>
+    Center Content
+    <md-button ng-click="ctrl.openLeftMenu()">
+      Open Left Menu
+    </md-button>
+    <md-button ng-click="ctrl.openLeftMenu()">
+      Open Left Menu
+    </md-button>
+  </md-content>
+
+   
+  
+  
+</div>
+<md-slider  min="0" max="255" ng-model="color.red" aria-label="red" id="red-slider" class>
+      </md-slider>
+      {{color.red}}
+      <div layout="column" layout-fill>
+  <md-toolbar md-scroll-shrink="true">
+    <div class="md-toolbar-tools">
+      <span>My App's Title</span>
+      <!-- fill up the space between left and right area -->
+      <span flex></span>
+      <md-button ng-click="ctrl.openLeftMenu()">
+       <md-tooltip>
+    Play Music
+  </md-tooltip>
+        Right Bar Button
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-content>
+  <div md-whiteframe="20">
+    Hello!
+
+  </md-content>
+
+</div>
+<div md-whiteframe="20">
+  <span>Elevation of 3dp</span>
+</div>
+ 
+
+<div layout="row" layout-xs="column">
+  <div flex=>First item in row</div>
+  <div flex>Second item in row</div>
+</div>
+<div layout="column">
+  <div flex>First item in column</div>
+  <div flex>Second item in column</div>
+</div>
+
+
+</body>
+</html>

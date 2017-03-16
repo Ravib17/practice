@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="js/myapp.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <md-toolbar>
+        <div class="md-toolbar-tools">Cookies & Chips</div>
+    </md-toolbar>
+    <div>
+        <div layout="row" style="background-color:blue">
+            <div flex>First item in row</div>
+            <div flex>Second item in row</div>
+            <div flex>Second item in row</div>
+            <div flex>Second item in row</div>
+        </div>
+        <div layout="column">
+            <div flex>First item in column</div>
+            <div flex>Second item in column</div>
+        </div>
+    </div>
+    <md-chips ng-model="ctrl.numberChips">
+        <input type="number" placeholder="Enter a number">
+    </md-chips>
+    <md-datepicker ng-model="birthday"></md-datepicker>
+  t!
+    </md-button>
+</body>
+
+</html>
