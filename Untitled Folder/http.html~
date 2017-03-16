@@ -1,0 +1,14 @@
+<DOCTYPE HTML>
+    <html>
+
+    <head>
+        <script src="angular.min.js"></script>
+	<script src="angucomplete.min.js"></script>
+        <script src="httpapp.js"></script>
+    </head>
+
+    <body ng-app="httpapp" ng-controller="uCtrl as ctrl">
+
+    </body>
+
+    </html>

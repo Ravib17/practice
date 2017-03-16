@@ -1,0 +1,9 @@
+var app = angular.module('app', ['ngMessages']);
+app.controller('uCtrl', function($scope, $http) {
+    $scope.submit = function() {
+        var name = $scope.name;
+        var email = $scope.email;
+        values = { uname: name, uemail: email  }
+    }
+});
+

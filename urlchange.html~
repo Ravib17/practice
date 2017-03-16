@@ -1,0 +1,11 @@
+<script type="text/javascript">
+    function changeUrl() {
+        if (typeof (history.pushState) != "undefined") {
+            var obj = { Page: "", Url: "" };
+            history.pushState(null, null, "greeting.html");
+        } else {
+            alert("Browser does not support HTML5.");
+        }
+    }
+</script>
+<input type="button" onClick="changeUrl()" value="Page1" id="button1" />

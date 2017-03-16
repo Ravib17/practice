@@ -1,0 +1,97 @@
+ <!-- Pagination Div Starts -->
+                            <div layout="row" layout-align="center center">
+                                <div class="pagination job-list-pagi" layout="row" layout-align="center center">
+                                    <ul ng-show="job.totalPages>1" class="list-page" layout="row" layout-align="center center">
+                                        <li layout="row" layout-align="center center" class="first-last-pagi prev-pag cursor-pointer sm-jobDisplay" ng-class="job.currentPage<=1?'disableNav':''" ng-click="job.currentPage>1?job.setPage(1):''">
+                                             <span>First</span>
+                                            <md-tooltip md-direction="top">First Page </md-tooltip>
+                                           
+                                        </li>
+                                        <li layout="row" layout-align="center center" class="prev-pag cursor-pointer previousNext-span" ng-class="job.currentPage<=1?'disableNav':''" ng-click="job.currentPage>1?job.goToPreviousPage():''">
+                                            <!-- <md-icon id="pagination_prev_btn" md-svg-src="/resources/bower_components/material-design-icons/navigation/svg/design/ic_chevron_left_24px.svg" ng-click="job.currentPage>1?job.goToPreviousPage():''" aria-label="Previous"></md-icon> -->
+                                            <span >Previous</span>
+                                        </li>
+                                        
+                                        <!-- <li class="prev-pag" layout="row" layout-align="center center" ng-hide="job.currentPage<=job.rangeSize+1">...</li> -->
+                                        <li id="page_select_{{$index}}" layout="row" layout-align="center center" class="no-pag cursor-pointer sm-jobDisplay" ng-repeat="n in job.pageArray" ng-class="{'active-page': n == job.currentPage}" ng-click="job.setPage(n)">
+                                            <span>{{n}}<span>
+                                        </li>
+                                       <!--  <li class="prev-pag" layout="row" layout-align="center center" ng-hide="job.currentPage>job.totalPages-job.rangeSize-1">...</li> -->
+                
+                                        <li id="pagination_nxt_btn" layout="row" layout-align="center center" class="next-pag cursor-pointer previousNext-span" ng-class="job.currentPage>=job.totalPages?'disableNav':''"  ng-click="job.currentPage<job.totalPages?job.goToNextPage():''">
+                                            <span>Next</span>
+                                            <!-- <md-icon md-svg-src="/resources/bower_components/material-design-icons/navigation/svg/design/ic_chevron_right_24px.svg"  aria-label="Next"></md-icon> -->
+                                        </li>
+                                        <li layout="row" layout-align="center center" class="first-last-pagi prev-pag cursor-pointer sm-jobDisplay" ng-disabled="job.currentPage>job.totalPages-job.rangeSize" ng-click="job.currentPage<job.totalPages?job.setPage(job.totalPages):''" ng-class="job.currentPage>=job.totalPages?'disableNav':''">
+                                            <span>Last</span>
+                                            <md-tooltip md-direction="top"> Last Page</md-tooltip>
+                                            
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Pagination Div Ends-->
+
+
+
+vm.totalPages = null;
+        vm.currentPage = 1;
+        vm.pageArray = [];
+        vm.rangeSize = 5; //number of current +next pages to display
+        vm.prevPages = 5; //number of previous pages to display
+
+	 function goToPreviousPage() {
+            if (vm.currentPage > 1)
+                vm.currentPage = vm.currentPage - 1;
+            vm.isDataLoading = true;
+            getData(vm.currentPage);
+        }
+
+        function goToNextPage() {
+            if (vm.currentPage < vm.totalPages)
+                vm.currentPage = vm.currentPage + 1;
+            vm.isDataLoading = true;
+            getData(vm.currentPage);
+        }
+
+        function setPage(currPage) {
+            vm.currentPage = currPage;
+            vm.isDataLoading = true;
+            getData(currPage);
+        }
+
+        function setPageArray() {
+            vm.pageArray = [];
+            vm.totalPages = Math.ceil(vm.totalCount / 25);
+            // var i; //loop iterator
+            var prevPages = vm.prevPages;
+            var rangeSize = vm.rangeSize;
+            var nextPages = vm.rangeSize - 1;
+
+            var start = vm.currentPage;
+            var end;
+            if (vm.totalPages <= prevPages + rangeSize) {
+                start = 1;
+                end = vm.totalPages;
+            } else if (vm.currentPage <= prevPages + 1) {
+                start = 1;
+                end = prevPages + rangeSize;
+            } else if (vm.currentPage + rangeSize - 1 >= vm.totalPages) {
+                start = vm.totalPages - prevPages - nextPages;
+                end = vm.totalPages;
+            } else {
+                start = vm.currentPage - vm.prevPages;
+                end = vm.currentPage + nextPages;
+            }
+            for (var i = start; i <= end; i++) {
+                vm.pageArray.push(i);
+            }
+
+            /*push numbers in array to show*/
+            // for (var i = start - prevPages; i < start + rangeSize && i < vm.totalPages; i++) {
+            //     if (i >= 0)
+            //         vm.pageArray.push(i + 1);
+            // }
+
+        };
+
