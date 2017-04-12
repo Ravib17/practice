@@ -1,0 +1,24 @@
+<div>
+    <div class="pagination job-list-pagi" >
+        <ul ng-show="totalPages>1" class="list-page" >
+            <li  class="first-last-pagi prev-pag cursor-pointer sm-jobDisplay" ng-class="currentPage<=1?'disableNav':''" ng-click="currentPage>1?setPage(1):''">
+                <span>First</span>
+                <md-tooltip md-direction="top">First Page </md-tooltip>
+            </li>
+            <li  class="prev-pag cursor-pointer previousNext-span" ng-class="currentPage<=1?'disableNav':''" ng-click="currentPage>1?goToPreviousPage():''">
+                <span>Previous</span>
+            </li>
+            <li id="page_select_{{$index}}"  class="no-pag cursor-pointer sm-jobDisplay" ng-repeat="n in pageArray" ng-class="{'active-page': n == currentPage}" ng-click="setPage(n)">
+                <span>{{n}}<span> <span ng-show="currentPage==n">Selected</span>
+                                        </li>
+                
+                                        <li id="pagination_nxt_btn"  class="next-pag cursor-pointer previousNext-span" ng-class="currentPage>=totalPages?'disableNav':''"  ng-click="currentPage<totalPages?goToNextPage():''">
+                                            <span>Next</span>
+            </li>
+            <li class="first-last-pagi prev-pag cursor-pointer sm-jobDisplay" ng-disabled="currentPage>totalPages-rangeSize" ng-click="currentPage<totalPages?setPage(totalPages):''" ng-class="currentPage>=totalPages?'disableNav':''">
+                <span>Last</span>
+                <md-tooltip md-direction="top"> Last Page</md-tooltip>
+            </li>
+        </ul>
+    </div>
+</div>

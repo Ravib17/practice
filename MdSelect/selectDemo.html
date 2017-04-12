@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <script src="angular.min.js"></script>
+    <script src="selectApp.js"></script>
+    <style>
+    .optionDiv {
+        position: absolute;
+        top: 35px;
+        left: 35px;
+        background-color: #e1e9ea;
+        height: 90px;
+        width: 120px;
+        z-index: 10;
+        box-shadow: -1px 2px 4px;
+    }
+    
+    .select {
+        width: 120px;
+        z-index: 8;
+        box-shadow: -1px 2px 4px;
+    }
+    
+    .option:hover {
+        background: black;
+        color: white;
+    }
+    
+    .option:hover {
+        background: black;
+        color: white;
+    }
+    </style>
+</head>
+
+<body ng-app="selectApp" ng-controller="selectCtrl as ctrl">
+    <ia-select ftc="ctrl.callf" ng-model="ctrl.selectedOption">
+     <!-- <ia-option ng-repeat="option in ctrl.optionArray" ng-value="option">{{option}}</ia-option> -->
+        <ia-option ng-repeat="option in ctrl.optionArray" ng-value="option.class.Id">{{option.name}}</ia-option>
+        <!-- <ia-option value="ctrl.option.class">{{ctrl.option.name}}</ia-option> -->
+    </ia-select>
+    {{ctrl.selectedOption}}
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<html>
+<head>
+	<script src="angular.min.js"></script>
+	<script src="pageApp.js"></script>
+	</head>
+<body ng-app="pageApp" ng-controller="pageCtrl as ctrl" ng-init="ctrl.totalCount=80" style="background-color: rgb(226, 232, 242);">
+<input type="number" ng-model="ctrl.totalCount">
+{{ctrl.totalCount}}
+<div ia-pagination total-count="ctrl.totalCount" current-page="ctrl.currentPage" page-limit="ctrl.pageLimit" previous-pages="ctrl.prevPages" next-pages="ctrl.nextPages" on-page-change="ctrl.getData()"></div>
+<!-- <div ia-pagination total-count="200" current-page="1" page-limit="10" previous-pages="5" next-pages="5" on-page-change="ctrl.getData()"></div> -->
+</body>
+</html>
