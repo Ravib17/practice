@@ -1,0 +1,46 @@
+<html>
+ 
+   <head> 
+      <meta charset = "utf-8"> 
+<script>
+var video ="";
+function hasUserMedia() { 
+   navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia 
+      || navigator.mozGetUserMedia || navigator.msGetUserMedia; 
+   return !!navigator.getUserMedia; 
+}
+
+if(hasUserMedia()){
+ navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia
+      || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+navigator.getUserMedia({ video: true, audio: true }, function (stream) { 
+    video = document.querySelector('video'); 
+ 	 video.src = window.URL.createObjectURL(stream);
+	console.log(stream.getTracks()); 
+},function(e){
+console.log(e)});
+
+}
+
+function takeSnap(){
+   var canvas= document.querySelector("canvas");
+   console.log(canvas);
+   canvas.width = video.videoWidth;
+   canvas.height = video.videoHeight;
+   var image =canvas.getContext('2d').
+    drawImage(video, 0, 0, canvas.width, canvas.height);
+    dataUrl =canvas.toDataURL();
+    console.log(dataUrl);
+
+}
+</script>
+   </head>
+	
+   <body> 
+	<div class="start-screen-recording"><div><div class="rec-dot"></div><span>Start</span></div></div><script src="//api.apowersoft.com/screen-recorder?lang=en" defer></script>
+      <video autoplay></video> 
+      <button onClick="takeSnap()">Take Snap</button>
+      <canvas></canvas>
+   </body> 
+	 
+</html> 

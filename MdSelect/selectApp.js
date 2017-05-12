@@ -1,21 +1,28 @@
 (function() {
     angular.module("selectApp", []);
-    angular.module("selectApp").directive("iaSelect", SelectDirective);
-    angular.module("selectApp").directive("iaOption", OptionDirective)
-
-    function SelectDirective($compile, $parse, $window) {
+    angular.module("selectApp").directive("iaSelect", function SelectDirective($compile, $parse, $window) {
 
         function SelectController($scope, $attrs, $element) {
             var vm = this;
+            var tempSelectedItem = "";
+            var ngModelCtrl = $element.controller('ngModel');
+            $scope.selectedOption = "select Option";
             $scope.isOptionMenuOption = false;
+
+            vm.optionAttr = []
+            vm.optionElements = [];
             vm.selectedOptIndex = -1;
 
             $scope.toggleOptions = function() {
                 $scope.isOptionMenuOption = !$scope.isOptionMenuOption;
                 if ($scope.isOptionMenuOption && vm.selectedOptIndex != -1) {
                     setTimeout(function() {
-                        console.log(vm.optionElements);
-                        console.log(vm.selectedOptIndex)
+                        vm.optionElements[vm.selectedOptIndex].childNodes[0].focus();
+
+                    }, 0)
+                } else if ($scope.isOptionMenuOption && vm.selectedOptIndex == -1) {
+                    setTimeout(function() {
+                        vm.selectedOptIndex++;
                         vm.optionElements[vm.selectedOptIndex].childNodes[0].focus();
 
                     }, 0)
@@ -29,73 +36,76 @@
             }
 
             $scope.onSelectKeydown = function(event) {
-                console.log("here");
                 if (event.keyCode == 13) {
                     $scope.toggleOptions()
                 }
+
             }
 
+            $scope.$watch("selectedItem", function(newValue, oldValue) {
 
-
-            $scope.selectedOption = "select Option";
-            vm.options = []
-            vm.optionElements = [];
-            $scope.$watch("selectedItem", function(newValue,oldValue) {
-                if (oldValue != newValue) {
-                    console.log(angular.copy(oldValue));
-                    console.log(angular.copy(newValue));
+                if (tempSelectedItem != newValue) {
                     updateSelectedOption();
                 }
 
             })
 
 
-            vm.selectOption = function(element, valueObject) {
-                
+            vm.selectOption = function(element, attr) {
 
+                console.log(attr);
                 $scope.selectedOption = element.innerHTML;
                 $scope.isOptionMenuOption = false;
                 var parent = element.parentElement;
+                // console.log(attr);
+                console.log(parent.getAttribute("ng-value"));
                 if (parent.getAttribute("ng-value")) {
-                    console.log("1");
                     var array = parent.getAttribute("ng-value").split(".");
-                    var finalValue = angular.copy(valueObject);
-                    for (var i = 1; i < array.length; i++) {
-                        finalValue = finalValue[array[i]];
-                    }
+                    var finalValue =attr.value;
+
                     $scope.selectedItem = finalValue;
-                }else if(parent.getAttribute("value")) {
-                    console.log("2");
+                    // console.log(finalValue);
+                    ngModelCtrl.$setViewValue($scope.selectedItem);
+                } else if (parent.getAttribute("value")) {
 
                     $scope.selectedItem = parent.getAttribute("value");
-                }else {
-                    console.log("3");
+                    ngModelCtrl.$setViewValue($scope.selectedItem);
+                } else {
 
                     $scope.selectedItem = element.innerHTML;
+                    ngModelCtrl.$setViewValue($scope.selectedItem);
                 }
                 // $scope.selectedOptElement = element;
+                tempSelectedItem = $scope.selectedItem;
                 vm.selectedOptIndex = vm.optionElements.indexOf(parent);
-                document.getElementById("select_div").focus();
+                 $element[0].children[0].children[0].focus();
 
             }
+
 
             function updateSelectedOption() {
                 var property = "";
                 var finalValue = "";
-                console.log(vm.options)
-                for (i = 0; i < vm.options.length; i++) {
-                    property = vm.optionElements[i].getAttribute('ng-value');
-                    var propetyArray = property.split(".");
-                    finalValue = vm.options[i];
-                    console.log(finalValue);
-                    for (j = 1; j < propetyArray.length; j++) {
-                        finalValue = finalValue[propetyArray[j]];
-                    }
-                    console.log(finalValue === $scope.selectedItem);
-                    if (finalValue === $scope.selectedItem) {
-                        $scope.selectedOption = vm.optionElements[i].childNodes[0].innerHTML;
-                        vm.selectedOptIndex = i;
-                        break;
+                for (i = 0; i < vm.optionAttr.length; i++) {
+                    if (vm.optionElements[i].getAttribute('ng-value')) {
+                        property = vm.optionElements[i].getAttribute('ng-value');
+                        var propetyArray = property.split(".");
+                        finalValue = vm.optionAttr[i].value;
+                        if (finalValue === $scope.selectedItem) {
+                            $scope.selectedOption = vm.optionElements[i].childNodes[0].innerHTML;
+                            vm.selectedOptIndex = i;
+                            break;
+                        }
+                    } else if (vm.optionElements[i].getAttribute('value')) {
+                        if (vm.optionElements[i].getAttribute("value") == $scope.selectedItem) {
+                            $scope.selectedOption = vm.optionElements[i].childNodes[0].innerHTML;
+                            vm.selectedOptIndex = i;
+                        }
+                    } else {
+                        if(vm.optionElements[i].childNodes[0].innerHTML == $scope.selectedItem){
+                            $scope.selectedOption = vm.optionElements[i].childNodes[0].innerHTML;
+                            vm.selectedOptIndex = i;
+                        }
                     }
 
                 }
@@ -103,8 +113,7 @@
             }
 
             $window.addEventListener('click', function(e) {
-                console.log(e.target.id);
-                if (e.target.id != "select_div" && e.target.id != "option") {
+                if ( angular.element(e.target.parentElement)[0].parentElement != $element[0] ) {
                     $scope.isOptionMenuOption = false;
                     if (!$scope.$$phase) {
                         $scope.$digest();
@@ -132,23 +141,18 @@
             templateUrl: 'iaSelect.html'
         }
 
-    }
-
-    function OptionDirective($compile) {
+    });
+    angular.module("selectApp").directive("iaOption",  function OptionDirective($compile) {
         function link(scope, elem, attr, ctrl) {
-            // console.log(ctrl.id)
-            // count++;
-            var appendElement = $compile(angular.element("<div class='option'  ng-keydown='optionOnKeyPress($event)' tabindex='-1' ng-click='selectOption($event)'>"))(scope);
+            var appendElement = $compile(angular.element("<div class='option' id='option'  ng-keydown='optionOnKeyPress($event)' tabindex='-1' ng-click='selectOption($event)'>"))(scope);
             appendElement = appendElement.append(elem.contents());
             elem.append(appendElement);
-            ctrl.options.push(scope.option);
-            ctrl.optionElements.push(elem[0])
-            console.log(ctrl.options);
+            ctrl.optionAttr.push(attr);
+            ctrl.optionElements.push(elem[0]);
+            
             scope.selectOption = function(event) {
-                console.log("herea;jsosdj");
                 elem[0].focus();
-
-                ctrl.selectOption(event.target, scope.option);
+                ctrl.selectOption(event.target,attr);
             }
 
             scope.optionOnKeyPress = function(event) {
@@ -164,6 +168,8 @@
                     }
                 } else if (event.keyCode == 13) {
                     scope.selectOption(event);
+                } else if (event.keyCode == 9) {
+                    scope.$parent.$parent.toggleOptions();
                 }
 
             }
@@ -172,26 +178,44 @@
             restrict: "E",
             require: "^iaSelect",
             link: link,
+            scope : {
+
+            }
         }
-    }
+    })
+
+    
+
+   
 
     angular.module("selectApp").controller('selectCtrl', function() {
         var vm = this;
-        // vm.selectedOption = 5;
+        vm.selectedOption = 5;
+        vm.selectedOption2 = 2;
         vm.add = add;
         vm.callf = function() {
-            console.log(vm.optionArray);
+        }
+        vm.onValueChanged =function(){
+            console.log("selected value is ")
+            console.log(vm.selectedOption)
+
+        }
+
+        vm.onValueChanged2 =function(){
+            console.log("selected value is ")
+            console.log(vm.selectedOption2)
+
         }
 
         function add(value) {
-            vm.selectedOption = 5
+            vm.selectedOption = "3"
             vm.optionArray.push(value);
-            console.log(vm.optionArray);
         }
         //vm.optionArray= ["A","B","C","D"];
         // vm.option = {"name":"sunil","class":"5"};
-        //vm.optionArray = [{ "name": "sunil", "class": 5 }, { "name": "arvind", "class": 6 }, { "name": "ridhi", "class": 7 }, { "name": "ravi", "class": 8 }];
-        vm.optionArray = [{ "name": "sunil", "class": { "className": "primary", "Id": 2 } }, { "name": "arvind", "class": { "className": "primary", "Id": 5 } }, { "name": "ridhi", "class": { "className": "primary", "Id": 6 } }, { "name": "ravi", "class": { "className": "primary", "Id": 9 } }];
+        vm.optionArray = [{ "name": "sunil", "class": 5 }, { "name": "arvind", "class": 6 }, { "name": "ridhi", "class": 7 }, { "name": "ravi", "class": 8 }];
+        vm.optionArray2 = [{ "name": "a-z", "class": 1 }, { "name": "z-a", "class": 2 }, { "name": "latest", "class": 3 }, { "name": "oldest", "class": 4 }];
+        //vm.optionArray = [{ "name": "sunil", "class": { "className": "primary", "Id": 2 } }, { "name": "arvind", "class": { "className": "primary", "Id": 5 } }, { "name": "ridhi", "class": { "className": "primary", "Id": 6 } }, { "name": "ravi", "class": { "className": "primary", "Id": 9 } }];
     });
 
 })();

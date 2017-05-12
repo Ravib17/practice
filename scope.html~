@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+
+<body ng-app="buttonsApp">
+    <div>
+        Outside myDirective: {{ myProperty }}
+        <div ia-Buttons ng-init="myProperty = 'wow, this is cool'" my-property="dasghad fkhafsdh">
+            Inside myDirective: {{ myProperty }}
+        </div>
+    </div>
+</body>
+<script>
+(function() {
+    angular.module("buttonsApp", []);
+    angular.module("buttonsApp").directive('iaButtons', function() {
+
+        
+        return {
+            restrict: "EA",
+	    transclude : true,
+            scope: {
+myProperty: "@"
+},	    
+	    replace : false,
+            link:function (scope, elem, attrs,ctrl,transcludeFn) {
+            console.log(scope.myProperty);
+ transcludeFn(scope,function(clone,scope){
+        // var compiled = $compile(clone)(scope);
+             elem.append(clone);
+      });
+	   
+        }
+        }
+
+    })
+
+    angular.module("buttonsApp").controller('buttonsCtrl', function() {
+        var vm = this;
+    //     var members = document.getElementById("divPostn");
+    //     var bottomPosition = (Math.round(members.getBoundingClientRect().right));
+    //     console.log(bottomPosition);
+    // })
+});
+
+})();
+</script>
+
+</html>
+
+
+
+
+

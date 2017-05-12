@@ -1,0 +1,157 @@
+diff --git a/interviewair/static/bower_components/angucomplete-alt/angucomplete-alt.js b/interviewair/static/bower_components/angucomplete-alt/angucomplete-alt.js
+index ba43d66..3cd8665 100644
+--- a/interviewair/static/bower_components/angucomplete-alt/angucomplete-alt.js
++++ b/interviewair/static/bower_components/angucomplete-alt/angucomplete-alt.js
+@@ -104,6 +104,47 @@
+                     }
+                 }
+             });
++            scope.$watch('selectedObject', function(newVal, oldVal) {
++                console.log(JSON.stringify(newVal));
++                console.log(JSON.stringify(oldVal))
++                console.log(newVal && !newVal.hasOwnProperty("originalObject"))
++                    // console.log(!newVal.hasOwnProperty("originalObject"))
++                if (newVal && !newVal.hasOwnProperty("originalObject")) {
++
++                    var formattedText, formattedDesc, image, selectedObjectResult;
++                    if (scope.titleField && scope.titleField !== '') {
++                        formattedText = extractTitle(newVal);
++                    }
++
++                    description = '';
++                    if (scope.descriptionField) {
++                        formattedDesc = extractValue(newVal, scope.descriptionField);
++                    }
++
++                    image = '';
++                    if (scope.imageField) {
++                        image = extractValue(newVal, scope.imageField);
++                    }
++                    selectedObjectResult = {
++                        title: formattedText,
++                        description: formattedDesc,
++                        image: image,
++                        originalObject: newVal,
++                    }
++                    if (scope.matchClass) {
++                        selectedObjectResult.title = extractTitle(selectedObjectResult.originalObject);
++                        selectedObjectResult.description = extractValue(selectedObjectResult.originalObject, scope.descriptionField);
++                    }
++                    if (scope.clearSelected) {
++                        scope.searchStr = null;
++                    } else {
++                        scope.searchStr = selectedObjectResult.title;
++                    }
++                    scope.selectedObject = selectedObjectResult;
++
++                }
++
++            })
+ 
+             scope.$on('angucomplete-alt:clearInput', function(event, elementId) {
+                 if (!elementId || elementId === scope.id) {
+@@ -170,11 +211,25 @@
+                 if (typeof scope.selectedObject === 'function') {
+                     scope.selectedObject(value, scope.selectedObjectData);
+                 } else {
++
+                     scope.selectedObject = value;
+-                }
++                    console.log(scope.selectedObject);
++                    setTimeout(function() {
++                        scope.selectedObjectChanged();
++                        document.getElementById(scope.id + "_value").focus();
++                    }, 0)
++
++                    // if (scope.selectedObjectChanged) {
++                    //     scope.selectedObjectChanged();
++                    // }
+ 
++                }
++                console.log("here");
+                 if (scope.inputChanged) {
+-                    scope.inputChanged(scope.searchStr);
++                    setTimeout(function() {
++                        scope.inputChanged();
++                    }, 0)
++
+                 }
+ 
+                 if (value) {
+@@ -662,24 +717,27 @@
+                 if (scope.focusIn) {
+                     scope.focusIn();
+                 }
++                console.log(scope.searchStr)
++                console.log(scope.selectedObject)
+                 if (minlength === 0 && (!scope.searchStr || scope.searchStr.length === 0)) {
+                     scope.currentIndex = scope.focusFirst ? 0 : scope.currentIndex;
+                     scope.showDropdown = true;
+                     showAll();
+-                } else  if (scope.searchStr && scope.searchStr.length >= minlength) {
+-                        initResults();
+-
+-                        if (searchTimer) {
+-                            $timeout.cancel(searchTimer);
+-                        }
+ 
+-                        scope.searching = true;
++                } else if (scope.searchStr && scope.searchStr.length >= minlength && (!scope.selectedObject || scope.searchStr != scope.selectedObject.title)) {
++                    initResults();
+ 
+-                        searchTimer = $timeout(function() {
+-                            searchTimerComplete(scope.searchStr);
+-                        }, scope.pause);
++                    if (searchTimer) {
++                        $timeout.cancel(searchTimer);
+                     }
+ 
++                    scope.searching = true;
++
++                    searchTimer = $timeout(function() {
++                        searchTimerComplete(scope.searchStr);
++                    }, scope.pause);
++                }
++
+             };
+ 
+             scope.hideResults = function() {
+@@ -728,7 +786,7 @@
+                     result.title = extractTitle(result.originalObject);
+                     result.description = extractValue(result.originalObject, scope.descriptionField);
+                 }
+-
++                console.log(result);
+                 if (scope.clearSelected) {
+                     scope.searchStr = null;
+                 } else {
+@@ -747,7 +805,9 @@
+                 }
+ 
+                 if (scope.inputChanged) {
+-                    str = scope.inputChanged(str);
++                     setTimeout(function() {
++                       str = scope.inputChanged();
++                    }, 0)       
+                 }
+                 return str;
+             };
+@@ -855,14 +915,17 @@
+                 overrideSuggestions: '@',
+                 fieldRequired: '=',
+                 fieldRequiredClass: '@',
+-                inputChanged: '=',
++                inputChanged: '&',
+                 autoMatch: '@',
+                 focusOut: '&',
+                 focusIn: '&',
+                 fieldTabindex: '@',
+                 inputName: '@',
+                 focusFirst: '@',
+-                parseInput: '&'
++                parseInput: '&',
++                searchStr: "=searchText",
++                selectedObjectChanged: '&'
++
+             },
+             transclude: true

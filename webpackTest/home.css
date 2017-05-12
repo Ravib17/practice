@@ -1,0 +1,408 @@
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@SIGNIN SAMMY@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+ .signIn-form{
+	width:400px !important;
+	min-width: 400px !important;
+	}
+.signIn-heading{
+	color: white;
+}
+.questions{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+	.questions > li{
+	list-style: none !important;
+	}
+
+.signIn-btn{
+	width:300px;
+	border:1px solid white;
+}
+
+
+.cls-signInNextBtn {
+    height: 48px;
+    width:100%;
+    background-color: #afbdc4 !important;
+       margin-left: 0px !important;
+    margin-right: 0px !important;
+
+}
+
+.cls-signInLoginBtn {
+   
+    height: 48px;
+    background-color: #597e89 !important;
+    width:100%;
+    
+
+}
+
+.signin-loader {
+    margin-left: 10px;
+}
+.signin-loader .md-inner .md-gap{
+  border-bottom-color: white!important;
+  border-top-color: white!important;
+}
+
+.signin-loader .md-inner .md-left .md-half-circle {
+    border-left-color: white!important;
+    border-top-color: white!important;
+    border-bottom: 5px solid transparent!important;
+}
+
+.signin-loader .md-inner .md-right .md-half-circle {
+    border-right-color: white!important;
+    border-top-color: white!important;
+    border-bottom: 5px solid transparent!important;
+}
+
+.please-wait-div{
+  height: 46px;
+}
+  .please-wait-text{
+    color:white !important;
+  }
+.cls-card2PreviousBtn {
+     min-height: 30px !important;
+    min-width: 50px !important;
+    background: transparent !important;
+  
+}
+	.cls-signInNextBtn:not([disabled]) {
+    
+    background-color: #ff6c00 !important;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.14), 0 6px 10px 0 rgba(0, 0, 0, 0.098), 0 1px 18px 0 rgba(0, 0, 0, 0.082) !important;
+}
+
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@SIGNUP SAMMY@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+.signup-form-container
+{
+   width:300px;
+   margin-top:30px;
+   margin-bottom: 30px;
+   margin-left:30px;
+   margin-right:30px;
+
+}
+
+.container-signup
+{
+  margin-top:8px;
+  background: none;
+  max-width:500px;
+  min-height: 500px !important;
+  
+}
+
+
+.valid-icon {
+    right: 0;
+    color:green;
+}
+
+.mob-no{
+	margin-left: 0px !important;
+	padding-left: 0px !important;
+}
+
+.error-msg {
+    padding-right: 0px !important;
+    text-align: right;
+    min-width: 135px;
+    right: 0;
+    height: 0px;
+    top: -30px;
+    position: relative;
+}
+
+.error-span {
+    background-color: red;
+    border-radius: 4px;
+    color: white;
+    padding: 4px;
+}
+
+.colg-checkbox > .md-container{
+	margin-top: -12px !important;
+
+}
+.signup-btn {
+    background-color: #0090E9!important;
+    color: white !important;
+    height: 48px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.md-button.md-raised.signup-btn:not([disabled]) {
+    background-color: #00AFFF !important;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.14), 0 6px 10px 0 rgba(0, 0, 0, 0.098), 0 1px 18px 0 rgba(0, 0, 0, 0.082) !important;
+}
+
+
+
+.signUp-font > span{
+  font-size: 14px ;
+  color:white;
+}
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Mrunal @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+body {
+   /* background-color: #EBEEF0 !important;*/
+	   background-image: url('https://res.cloudinary.com/interviewair/image/upload/q_80/v1445426206/college/College-Background-01.jpg');
+	   -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover ;
+	  background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  background-position: center;
+  }
+
+/*User Change Password*/
+.cls-toolbar {
+   /* background-image: url('../images/backtool.jpg');*/
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: transparent !important;
+}
+	.home{
+  width:185px !important;
+  cursor: pointer;
+}
+  .home-btn{
+    min-width: 50px!important;
+  min-height: 30px!important;
+  margin-bottom: 3px  ;
+  }
+
+  .home-icon
+  {
+    color:white!important;
+    margin-bottom:0px;
+    width:36px;
+    height:36px;
+  }
+  .home-heading
+  {
+    color:white;
+    margin-top:5px;
+  }
+  .home-heading-white
+  {
+    color:white;
+    margin-top:5px;
+  }
+      .cancel-btn-div
+      {
+        width:100px;
+        height: 40px; 
+        margin-bottom: 0px; 
+        margin-top: -5px;
+        /*background-color: red;*/
+      }
+
+      .heading-font
+      {
+        font-size:21px;
+        cursor: pointer;
+      }
+
+      .backBtnDiv
+      {
+        width:51px;
+        margin-left:-60px;
+      }
+
+      	.ia-toolbar-logo{
+      		width:30px;
+      		height:30px;
+      	}
+
+      .login
+      {
+          color:white;
+          font-size:22px;
+          margin-top:0px;
+          /*margin-bottom:10px;*/
+          font-weight: 400;
+          margin-left:10px;
+      }
+
+      .changePass-heading{
+      	color:white;
+      	font-size: 20px;
+    	top: 50px;
+    	position: relative;
+      }
+
+      .changePass-card{
+		  max-width:400px !important;
+		}
+      /*.signIn-card{
+		  max-width:300px !important;
+		  /*margin-top:10%;*/
+		  /*background-color: white;
+		  margin-right: auto;
+		  margin-left:auto;
+		}*/
+
+			.signup-form-container{
+			  /* width:300px;*/
+			   margin-top:30px;
+			   margin-bottom: 30px;
+			   margin-left:30px;
+			   margin-right:30px;
+			}
+
+				.change-pwd-heading{
+				  color:black;
+				  margin-bottom: 5px;
+				}
+
+				.signUp-Field-label{
+    				color:black ; 
+				}
+
+					/*Puts the border to the input container*/
+
+				.error-msg {
+				    padding-right: 0px !important;
+				    text-align: right;
+				    min-width: 135px;
+				    right: 0;
+				    height: 0px;
+				    top: -30px;
+				    position: relative;
+				}
+
+				.error-span {
+				    background-color: red;
+				    border-radius: 4px;
+				    color: white;
+				    padding: 4px;
+				    margin-right: 4px;
+				}
+
+				
+
+					.signin-loader .md-inner .md-gap{
+					  border-bottom-color: white;
+					  border-top-color: white;
+					}
+
+					.signin-loader .md-inner .md-left .md-half-circle {
+					    border-left-color: white;
+					    border-top-color: white;
+					    border-bottom: 5px solid transparent;
+					}
+
+					.signin-loader .md-inner .md-right .md-half-circle {
+					    border-right-color: white;
+					    border-top-color: white;
+					    border-bottom: 5px solid transparent;
+					}
+					.please-wait-div{
+					  height: 46px;
+					}
+					  .please-wait-text{
+					    color:white !important;
+					  }
+
+					  .forgot-pwd-icon{
+						  width:50px;
+						  height: 50px;
+						  color:#0090E9 !important;
+						}
+						.forgot-pwd-text{
+						  margin-top: 10px;
+						  /*color:white;*/
+						  font-style: normal;
+						  font-weight: 400;
+						}
+
+
+						.cls-change-pass {
+						    height: 48px;
+						    width:100%;
+						    background-color: #afbdc4 !important;
+						    margin-left: 0px !important;
+						    margin-right: 0px !important;
+						}
+
+						.md-button.md-raised.cls-change-pass:not([disabled]) {    
+						    background-color: #ff6c00 !important;
+
+
+						  }
+
+   	md-input-container.change-pass-container{
+		padding-bottom: 5px !important;
+		margin-bottom: 20px;
+		border-bottom: 1px solid;
+		border-spacing: 1px;
+		border-color: rgba(0, 0, 0, 0.12);
+	}
+	
+	/*when input is invalid color is changed to red*/
+	md-input-container.change-pass-container.md-input-invalid{
+		border-color: red;
+	}
+	
+	/* when input is focused and valid, color is changed to blue*/
+	md-input-container.change-pass-container.md-input-focused:not(.md-input-invalid){
+		border-color: #00BEA4;
+	}
+	
+	 md-input-container.change-pass-container.md-input-focused > label{
+            color:#00BEA4;  
+        }
+
+     md-input-container.change-pass-container.md-input-focused label:not(.md-no-float), md-input-container.change-pass-container.md-input-has-value label:not(.md-no-float){
+     	color:#00BEA4;  
+     }
+
+	/*when input is focused, bold the border*/
+	md-input-container.change-pass-container.md-input-focused{
+		border-width: 0 0 2px;
+	}
+	
+		/*Change color of the labe to red when input is invalid*/
+		md-input-container.change-pass-container.md-input-invalid label{
+			color:red;
+		}
+		
+		/*Code for input*/
+		/*Hides the default border/line of input which we have implemented for whole container*/
+		md-input-container.change-pass-container input{
+			border:0px !important;
+		}
+		md-autocomplete.change-pass-container md-input-container input{
+			border:0px !important;
+		}
+
+	@media screen and (max-width: 480px) {
+    	.changePass-card {
+    	max-width: 300px !important;
+		}
+
+		 .changePass-heading{
+		 	/*top:0px;*/
+		 }
+    }
+
+    @media screen and (max-width: 640px) {
+    	.changePass-card {
+    	max-width: 300px !important;
+		}
+
+		.changePass-heading{
+		 /*	top:0px;*/
+		 }
+    }

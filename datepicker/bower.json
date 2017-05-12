@@ -1,0 +1,20 @@
+{
+  "name": "DatePicker",
+  "homepage": "https://github.com/Ravib17/practice",
+  "authors": [
+    "ravi <ravi@interviewair.com>"
+  ],
+  "description": "For Date picker",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs-datepicker": "^2.1.17"
+  }
+}

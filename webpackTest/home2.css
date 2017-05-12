@@ -1,0 +1,724 @@
+.login-div-bg {
+    background-color: white;
+}
+
+.comp-signIn-card {
+    box-shadow: none;
+}
+
+.comp-heading {
+    color: #3E50B4;
+    margin-top: 25px;
+    font-size: 21px;
+}
+
+.comp-signIn-form {
+    width: 350px !important;
+    height: 281px !important;
+}
+
+.comp-signUp-Field-cont {
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.comp-signInNextBtn {
+    background-color: #afbdc4 !important;
+    height: 40px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 45px;
+    width: 100%;
+}
+
+.md-button.md-raised.comp-signInNextBtn:not([disabled]) {
+    padding: 6px;
+    background-color: #00BBD3!important;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.14), 0 6px 10px 0 rgba(0, 0, 0, 0.098), 0 1px 18px 0 rgba(0, 0, 0, 0.082) !important;
+}
+
+.comp-signInLoginBtn {
+    background-color: #afbdc4 !important;
+    height: 40px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 9px;
+    width: 100%;
+}
+
+.md-button.md-raised.comp-signInLoginBtn:not([disabled]) {
+    background-color: #00BBD3!important;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.14), 0 6px 10px 0 rgba(0, 0, 0, 0.098), 0 1px 18px 0 rgba(0, 0, 0, 0.082) !important;
+}
+
+.md-button.md-raised.comp-signInNextBtn:not([disabled]) md-icon {
+    margin-top: 0px;
+}
+
+md-input-container.comp-signUp-Field-cont.md-input-focused > label {
+    color: #3E50B4 !important;
+}
+
+md-input-container.comp-signUp-Field-cont.md-input-has-value:not(.md-input-invalid) label {
+    color: #3E50B4 !important;
+}
+
+md-input-container.comp-signUp-Field-cont.md-input-has-value:not(.md-input-invalid) .md-input {
+    border-bottom: 2px solid #00BBD3 !important;
+}
+
+md-input-container.comp-signUp-Field-cont:not(.md-input-invalid) .md-input {
+    border-bottom: 2px solid #00BBD3 !important;
+}
+
+.comp-signIn-icon {
+    margin-top: -2px;
+}
+
+.email-container {
+    margin-top: 66px;
+}
+
+.signIn-img-div {
+    background-color: #012C4E;
+    background-image: url('https://res.cloudinary.com/interviewair/image/upload/v1455790777/Company/Background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.signIn-mask-div {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.heading-div {
+    height: 75px;
+}
+
+.ai-logo-div {
+    height: 75px;
+    width: 75px;
+    background-color: #00BBD3;
+}
+
+.IA-text-signIn {
+    color: white;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.comp-signIn-heading {
+    width: 444px;
+    color: white;
+}
+
+.signIn-title {
+    font-size: 26px;
+    width: 402px;
+}
+
+.signIn-desc {
+    font-size: 18px;
+    line-height: 2;
+}
+
+.signIn-content {
+    height: 100%;
+}
+
+.comp-create-acc-btn {
+    width: 200px;
+    border: 1px solid white;
+}
+
+.comp-forgotPass {
+    color: #3E50B4 !important;
+    text-decoration: none;
+    font-size: 12px;
+    margin-top: 0px;
+}
+
+.comp-rem-pass-checkbox > md-checkbox.md-checked .md-icon {
+    background-color: #3E50B4 !important;
+    color: #3E50B4;
+}
+
+.comp-prev-icon {
+    color: #3E50B4 !important;
+}
+
+.ai-logo-icon {
+    height: 45px;
+    width: 45px;
+}
+
+.main-signIn-div {
+    margin-top: -70px!important;
+}
+
+.email-text-blue {
+    color: #3E50B4;
+}
+
+.comp-resend-pwd-text {
+    margin: 5px 0px;
+    text-align: center;
+}
+
+.comp-resend-btn {
+    height: 40px;
+    background-color: #00BBD3 !important;
+    width: 250px;
+}
+
+.comp-resend-ahref-link {
+    color: #00BBD3;
+    height: 36px;
+    line-height: 2;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 1px solid #00BBD3;
+    border-radius: 4px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    width: 250px;
+    margin-left: -8px;
+}
+
+.comp-sigin-txt {
+    margin-top: 4px;
+}
+
+.comp-confirmation-li {
+    width: 370px;
+    margin-left: -20px;
+}
+
+.comp-resend-btn-div {
+    margin-top: 15px;
+}
+
+.confirm-PreviousBtn {
+    margin-left: 39px;
+    background: transparent !important;
+    min-width: 20px !important;
+    height: 10px !important;
+}
+
+.comp-resend-pwd-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.comp-change-pass {
+    box-shadow: none;
+    /* margin-top: -70px;*/
+}
+
+.comp-changePassBtn {
+    background-color: #afbdc4 !important;
+    height: 40px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 9px;
+    width: 300px;
+}
+
+.comp-changePassBtn[disabled] {
+    background-color: #afbdc4 !important;
+    height: 40px!important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 9px;
+    width: 300px;
+    padding: 3px;
+    max-height: 40px!important;
+}
+
+.md-button.md-raised.comp-changePassBtn:not([disabled]) {
+    padding: 3px;
+    height: 40px!important;
+    max-height: 40px !important;
+    background-color: #00BBD3!important;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.14), 0 6px 10px 0 rgba(0, 0, 0, 0.098), 0 1px 18px 0 rgba(0, 0, 0, 0.082) !important;
+}
+
+.change-loginBtn-div {
+    margin-left: 8px;
+}
+
+.comp-changepass-form-container {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 300px;
+}
+
+
+/*.comp-changePass-form {
+    height: 281px !important;
+    width: 300px !important;
+}*/
+
+.comp-success-change-pass-div {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    max-width: 400px;
+    width: 300px;
+}
+
+.comp-success-login-btn {
+    margin-top: 20px;
+}
+
+.company-text {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.comp-changePassSuccessBtn {
+    background-color: white!important;
+    height: 40px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 9px;
+    width: 300px;
+    border: 1px solid #00BBD3;
+    color: #00bbd3 !important;
+    margin-top: 100px;
+    box-shadow: none!important;
+}
+
+.token-lgn-btn {
+    width: 200px;
+}
+
+.token-lgn-btn:hover {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.pls-wait-signin {
+    margin-top: -8px;
+}
+
+.comp-acc-btn {
+    margin-bottom: 75px;
+}
+
+
+/*****************************Mrunal SignIn(end)************************************************/
+
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@Pankaj User Verification (Company signup)@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+.emailConf-left-div {
+    background-color: #012c4e;
+    background-image: url("https://res.cloudinary.com/interviewair/image/upload/v1455790777/Company/Background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
+.tool-top {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.company-veri-succes-bottom-div {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 89%;
+}
+
+.emailConf-right-div {
+    background-color: white;
+}
+
+.msg-LoginCBtn {
+    height: 48px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 6px;
+    width: 65%;
+    background-color: #00BBD3;
+    color: white;
+}
+
+.msg-CreateAccountBtn {
+    height: 48px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 6px;
+    width: 65%;
+    background-color: white;
+    border: 1px solid #00BBD3;
+    color: #00BBD3;
+}
+
+.email-conf-toolbar {
+    width: 50%;
+}
+
+.msg-LoginCBtn:hover {
+    background-color: #00BBD3 !important;
+}
+
+.msg-CreateAccountBtn:hover {
+    background-color: white !important;
+}
+
+.logo-div {
+    background-color: #00BBD3;
+    width: 75px;
+    height: 75px;
+}
+
+.ai-logo-for-comp-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.ai-name {
+    font-size: 30px;
+}
+
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ SAMMY SIGNUP @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+.logo-main-div {
+    width: 75px;
+    height: 75px;
+    background-color: #00B6D8;
+}
+
+.logo-ia {
+    width: 50px;
+    height: 50px;
+}
+
+.logo-txt {
+    font-size: 30px;
+    color: white;
+}
+
+.dummy-txt {
+    color: white;
+    margin-left: 12px;
+}
+
+.company-signup-form {
+    width: 300px;
+    height: 600px;
+    margin-top: -24px;
+}
+
+.comp-create-account-heading {
+    color: #4F29AF;
+    font-weight: 400;
+    margin-bottom: 47px;
+    font-size: 20px;
+}
+
+.signUp-Field-cont-com {
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 13px;
+}
+
+md-input-container.signUp-Field-cont-com.md-input-focused > label {
+    color: #4F29AF !important;
+}
+
+md-input-container.signUp-Field-cont-com.md-input-has-value:not(.md-input-invalid) label {
+    color: #4F29AF !important;
+}
+
+md-input-container.signUp-Field-cont-com.md-input-focused:not(.md-input-invalid) .md-input {
+    border-color: #00BAD9 !important;
+}
+
+md-input-container.signUp-Field-cont-com.md-input-has-value:not(.md-input-invalid) .md-input {
+    border-color: #00BAD9 !important;
+}
+
+.mobile-inp-cont {
+    margin-left: -8px;
+    width: 291px;
+}
+
+.mobile-cont-div {
+    margin-left: -18px;
+    height: 71px;
+}
+
+.plus-sign {
+    margin-top: 22px !important;
+    margin-left: 0px;
+    height: 20px;
+    padding-left: 18px;
+    width: 16px;
+    z-index: 10;
+}
+
+.mob-inp-label {
+    margin-left: 20px;
+}
+
+.mobile-inp {
+    width: 296px !important;
+    margin-left: -9px;
+    padding-left: 30px !important;
+    padding-top: 5px !important;
+}
+
+.mobile-inp-cont.md-input-focused label:not(.md-no-float),
+.mobile-inp-cont.md-input-has-placeholder label:not(.md-no-float),
+.mobile-inp-cont.md-input-has-value label:not(.md-no-float) {
+    transform: translate3d(0px, 6px, 0px) scale(0.75);
+    margin-left: -9px !important;
+}
+
+.comp-checkbox > .md-container {
+    margin-top: -12px !important;
+}
+
+.comp-checkbox {
+    margin-top: -9px;
+    margin-bottom: -18px;
+}
+
+.comp-cb > .md-container {
+    top: 25px;
+}
+
+.comp-checkbox > md-checkbox {
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+}
+
+.comp-checkbox > md-checkbox > .md-container {
+    margin-top: -7px !important;
+}
+
+.comp-checkbox > md-checkbox.md-checked .md-icon {
+    background-color: #4F29AF !important;
+    color: #4F29AF;
+}
+
+.comp-rules-div {
+    width: 300px;
+}
+
+.txt-terms {
+    margin-right: 8px;
+    color: #b5b1b1;
+    font-size: 12px;
+    text-align: right;
+    font-size: 12px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.txt-terms-and {
+    margin: 0px;
+    color: #b5b1b1;
+    font-size: 12px;
+    text-align: right;
+    font-size: 12px;
+}
+
+.terms-font {
+    color: #00BAD9 !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    text-decoration: none !important;
+    font-size: 12px;
+}
+
+.create-acc-btn {
+    background-color: rgb(175, 189, 196) !important;
+    width: 296px !important;
+    height: 40px !important;
+    top: 40px;
+    margin: 0px;
+}
+
+.comp-side-signup-maskDiv {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+}
+
+.create-acc-btn > center {
+    color: white !important;
+}
+
+.create-acc-btn:not([disabled]) {
+    color: white !important;
+    background-color: #00BAD9!important;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.14), 0 6px 10px 0 rgba(0, 0, 0, 0.098), 0 1px 18px 0 rgba(0, 0, 0, 0.082) !important;
+}
+
+.email-text-comp {
+    color: #00BAD9!important;
+}
+
+.resend-pwd-text-com {
+    margin: 5px 0px;
+}
+
+.activ-txt {
+    margin-top: -2px;
+}
+
+.resend-btn-div-com {
+    margin-top: 5px;
+}
+
+.resend-btn-com {
+    height: 48px;
+    background-color: #00BAD9!important;
+    width: 250px !important;
+    margin-left: 0px !important;
+}
+
+.resend-btn-com[disabled] {
+    background-color: #AFBDC4 !important;
+    color: white;
+}
+
+.resend-btn-com > center {
+    color: white !important;
+}
+
+.login-comp {
+    color: white;
+    height: 40px;
+    width: 185px;
+    line-height: 2;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 1px solid white;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 3px;
+}
+
+.lgn-btn-com {
+    height: 48px;
+    color: #00BAD9!important;
+    width: 250px !important;
+    margin-left: 0px !important;
+    border: 1px solid #00BAD9;
+    background-color: white;
+    margin-top: 6px !important;
+}
+
+.lgn-btn-com:hover {
+    background-color: white !important;
+}
+
+.comp-empt-div {
+    height: 200px;
+    width: 100%;
+}
+
+.comp-empt-div1 {
+    height: 142px;
+    width: 100%;
+}
+
+.lgn-txt {
+    padding-top: 8px;
+}
+
+.resend-comp-div {
+    height: 660px;
+    width: 463px;
+}
+
+.congo-txt {
+    font-size: 20px;
+}
+
+.mobile-inp-cont > .md-input-messages {
+    left: -8px !important;
+}
+
+.mobile-inp-cont [data-ng-messages],
+.mobile-inp-cont [ng-messages],
+.mobile-inp-cont [x-ng-messages],
+.mobile-inp-cont data-ng-messages,
+.mobile-inp-cont ng-messages,
+.mobile-inp-cont x-ng-messages {
+    clear: left;
+    left: -8px;
+    order: 4;
+    overflow: hidden;
+    position: relative;
+}
+
+.company-txt {
+    font-size: 20px;
+    color: white;
+    height: 36px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .mobile-inp {
+        padding-top: 7px !important;
+    }
+}
+
+.main-headng-signup {
+    font-size: 26px;
+    font-style: bold;
+    font-weight: 400;
+}
+
+.signup-txt-left {
+    font-size: 18px;
+}
+
+.emp-div {
+    height: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+md-card:focus,
+p:focus,
+div:focus,
+li:focus,
+md-icon:focus {
+    outline: none !important;
+}
+
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+.error-msgs {
+    height: 20px;
+}
+
+.cont-div {
+    height: 110px;
+}
+
+
+/*sammy*/
+
+.cls-canSignInContent {
+    background-color: white;
+}
+
+.comp-signUp-Field-cont label.md-required:not(.md-container-ignore)::after , .signUp-Field-cont-com label.md-required:not(.md-container-ignore)::after{
+    visibility: hidden;
+}

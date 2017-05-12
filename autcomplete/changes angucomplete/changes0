@@ -1,0 +1,96 @@
+             // function showDropdown_list(){
+              setTimeout(function() {
+ -            console.log("winHeight"+window.innerHeight);
+ -            var elementTop = document.getElementById(scope.id + "_dropdown");
+ -            var innerDivHeight = window.innerHeight;
+ -            var members = document.getElementById("members");
+ -            // console.log((Math.round(members.getBoundingClientRect().bottom) + 210) - innerDivHeight);
+ -            var bottomPosition = ((Math.round(members.getBoundingClientRect().bottom) + 210) - innerDivHeight);
+ -            if (bottomPosition < 250) {
+ -                elementTop.style.bottom = "auto";
+ -            } else {
+ -                elementTop.style.bottom = "40px";
+ -            }
+ -        }, 0)
+ -        // }
+ +                    console.log("winHeight" + window.innerHeight);
+ +                    console.log(elem);
+ +                    var elementTop = document.getElementById(scope.id + "_dropdown");
+ +                    var innerDivHeight = window.innerHeight;
+ +                    var members = elem[0];
+ +                    // console.log((Math.round(members.getBoundingClientRect().bottom) + 210) - innerDivHeight);
+ +                    var bottomPosition = ((Math.round(members.getBoundingClientRect().bottom) + 210) - innerDivHeight);
+ +                    if (bottomPosition < 250) {
+ +                        elementTop.style.bottom = "auto";
+ +                    } else {
+ +                        elementTop.style.bottom = "40px";
+ +                    }
+ +                }, 0)
+ +                // }
+  
+              function handleInputChange(newval, initial) {
+                  if (newval) {
+ @@ -172,7 +173,7 @@
+                      scope.selectedObject = value;
+                  }
+  
+ -                 if (scope.inputChanged) {
+ +                if (scope.inputChanged) {
+                      scope.inputChanged(scope.searchStr);
+                  }
+  
+ @@ -619,7 +620,7 @@
+                  } else {
+                      scope.showDropdown = true;
+                  }
+ -                console.log(document.getElementById(scope.id + "_dropdown"));
+ +
+                  setTimeout(function() {
+                      var elementTop = document.getElementById(scope.id + "_dropdown");
+                      window.addEventListener("resize", showDropDownList);
+ @@ -628,7 +629,7 @@
+                          console.log(window.innerHeight);
+                          var innerDivHeightH = window.innerHeight;
+                          // 210 + (620 - 325) = 505
+ -                        var members = document.getElementById("members");
+ +                        var members = elem[0];
+                          console.log((Math.round(members.getBoundingClientRect().bottom) + 505) - innerDivHeightH);
+                          var bottomPositionH = ((Math.round(members.getBoundingClientRect().bottom) + 505) - innerDivHeightH);
+                          if (bottomPositionH < 250) {
+ @@ -665,7 +666,20 @@
+                      scope.currentIndex = scope.focusFirst ? 0 : scope.currentIndex;
+                      scope.showDropdown = true;
+                      showAll();
+ -                }
+ +                } else  if (scope.searchStr && scope.searchStr.length >= minlength) {
+ +                        initResults();
+ +
+ +                        if (searchTimer) {
+ +                            $timeout.cancel(searchTimer);
+ +                        }
+ +
+ +                        scope.searching = true;
+ +
+ +                        searchTimer = $timeout(function() {
+ +                            searchTimerComplete(scope.searchStr);
+ +                        }, scope.pause);
+ +                    }
+ +
+              };
+  
+              scope.hideResults = function() {
+ @@ -700,6 +714,8 @@
+                  if (hideTimer) {
+                      $timeout.cancel(hideTimer);
+                  }
+ +
+ +                scope.showDropdown = true;
+              };
+  
+              scope.hoverRow = function(index) {
+ @@ -868,4 +884,4 @@
+          };
+      }]);
+  
+ -})(); 
+ +})();

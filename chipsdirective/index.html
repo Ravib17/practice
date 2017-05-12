@@ -1,0 +1,13 @@
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" type="text/javascript"></script>
+<script src="angucomplete-alt-master/dist/angucomplete-alt.js" type="text/javascript"></script>
+<script src="chips-directive.js"></script>
+<script src="chipsApp.js"></script>
+</head>
+<body ng-app="chipTestApp" ng-controller="chipCtrl as ctrl">{{ctrl.selected}}
+<chips-input ng-model="ctrl.chipsArray" placeholder="{{ctrl.placeholder}}"  max-chips="5" on-add-chip="ctrl.onAddChip()" selected-item="ctrl.selected" on-transform-chip="ctrl.transfromChipFn(chiptoadd)">
+.<div angucomplete-alt id="angucomplete" placeholder="Search name" maxlength="50" pause="100" selected-object="ctrl.selectedNameFunction" local-data="ctrl.demoArray" search-fields="name" title-field="name" minlength="1" input-class="form-control form-control-small" match-class="highlight" clear-selected="true"></div>
+</chips-input>
+</body>
+</html>

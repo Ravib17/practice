@@ -1,0 +1,20 @@
+<div>
+    <style>
+    input:focus {
+        outline: none;
+    }
+    </style>
+    <div ng-click="dirCtrl.divclicked()" style="border-style: solid;border-width: 2px;display: flex;min-height: 30px;overflow-y: scroll; max-height: 50px;padding: 20px;" id="maindiv">
+        <div ng-repeat="chip in dirCtrl.chipsArray track by $index" type="none">
+            <div style="border:1px solid black;margin-left: 10px;">
+                <span>{{chip}}</span>
+                <span ng-click="dirCtrl.clicked($index)" ng-hide="dirCtrl.useReadOnly">x</span>
+            </div>
+        </div>
+        <input type="text" name="input" id="chips_input" autocomplete="off" ng-keydown="dirCtrl.keydown($event,dirCtrl.chipdata)" ng-focus="dirCtrl.focusfn($event)" ng-blur="dirCtrl.blur($event)" ng-model="dirCtrl.chipdata" style="border:none;text-decoration-style: none; margin-left: 10px;" ng-show="!dirCtrl.transcludeAnguComplete" placeholder="{{dirCtrl.placeholderToShow}}" ng-hide="dirCtrl.useReadOnly">
+        <div ng-transclude id="transcludediv" ng-show="dirCtrl.transcludeAnguComplete"></div>
+    </div>
+
+    {{dirCtrl.useReadOnly}}
+</div>
+

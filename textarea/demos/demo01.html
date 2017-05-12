@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>Demo 1 : Convert All Textareas</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="app" ng-controller="appController as ctrl">
+
+<div id="menu"></div>
+
+<div id="intro">
+By calling the nicEditors.allTextareas() function the below example replaces all 3 textareas on the page with nicEditors. NicEditors will match the size of the editor window with the size of the textarea it replaced.
+</div>
+<br />
+
+<div id="sample">
+<script type="text/javascript" src="../nicEdit.js"></script>
+<script type="text/javascript">
+	bkLib.onDomLoaded(function() {
+                    nicEditors.editors.push(
+                        new nicEditor().panelInstance(
+                            document.getElementById('myNicEditor')
+                        )
+                    );
+                });
+</script>
+
+<h4>First Textarea</h4>
+<textarea name="area1" cols="40"></textarea>
+<br />
+
+<h4>Second Textarea</h4>
+<textarea name="area2" style="width: 100%;" id="myNicEditor" ng-model="ctrl.textareaData" ng-change="ctrl.fn()">
+	Some Initial Content was in this textarea
+</textarea>
+<br />
+
+<h4>Third Textarea</h4>
+<textarea name="area3" style="width: 300px; height: 100px;">
+	HTML <b>content</b> <i>default</i> in textarea
+</textarea>
+</div>
+<button ng-click="ctrl.fn()">click</button>
+</body>
+</html>

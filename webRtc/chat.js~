@@ -1,0 +1,15 @@
+var configuration = { 
+         "iceServers": [{ "url": "stun:stun.1.google.com:19302" }] 
+      }; 
+
+myConnection = new webkitRTCPeerConnection(configuration); 
+
+ myConnection.onicecandidate = function (event) { 
+		
+         if (event.candidate) { 
+            send({ 
+               type: "candidate", 
+               candidate: event.candidate 
+            }); 
+         } 
+      }

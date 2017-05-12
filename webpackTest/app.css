@@ -1,0 +1,303 @@
+.colgLoginimg{
+     /*height:400px;*/
+    background-image: url("https://res.cloudinary.com/interviewair/image/upload/f_auto,q_auto/v1487164448/Version_Feb/College%20zone/Homepage_College_login_default_GirlStudying_interviewair_14.02.197.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*height: 100%;*/
+    /*background-attachment: fixed;*/
+    background-size: cover;
+}
+
+.colgSignUpimg{
+         /*height:400px;*/
+    background-image: url("https://res.cloudinary.com/interviewair/image/upload/f_auto,q_auto/v1487164453/Version_Feb/College%20zone/Homepage_College_CreateAccount_Default_TeachersHappy_interviewair_14.02.137.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*height: 100%;*/
+    /*background-attachment: fixed;*/
+    background-size: cover;
+}
+
+
+.candReg-mainView {
+    height: 100%;
+}
+
+.college-left-container {
+    color: white;
+    height: 100%;
+}
+
+.user-right-container {
+    padding-bottom: 50px;
+    margin-top: 60px;
+}
+
+.clg-signIn-form {
+    width: 100%;
+    height: 100%;
+}
+
+.divContent-width {
+    width: 80%;
+}
+
+.collegeLogin-img-main-div {
+    width: 50%;
+    height: 55%;
+}
+
+.registerText-colgContainer-div {
+    height: 68px;
+    margin-top: 20px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.clgSignUp-img-div {
+    background-color: #32BDA2;
+}
+
+.clg-signUp-inp-container {
+    width: 100%;
+    margin-bottom: 0px!important;
+}
+
+md-input-container.clg-signUp-inp-container.md-input-focused:not(.md-input-invalid) .md-input {
+    border-color: #32BDA2!important;
+}
+
+md-input-container.signUp-inp-container:not(.md-input-focused) .md-input {
+    border-color: #807777;
+}
+
+md-input-container.clg-signUp-inp-container:not(.md-input-focused) > label {
+    color: #807777;
+}
+
+md-input-container.clg-signUp-inp-container.md-input-focused > .md-input {
+    color: black!important;
+}
+
+md-input-container.clg-signUp-inp-container:not(.md-input-focused) > .md-input {
+    color: black!important;
+}
+
+md-input-container.clg-signUp-inp-container.md-input-focused > label {
+    color: #32BDA2 !important;
+}
+
+md-input-container.clg-signUp-inp-container.md-input-invalid label {
+    color: red;
+}
+
+md-input-container.clg-signUp-inp-container.md-input-invalid > .md-input {
+    color: red;
+}
+
+.clgSignUp-send-btn,
+.clgSignUp-send-btn:hover {
+    background-color: #32BDA2 !important;
+    color: white !important;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.clg-forgotPass {
+    font-weight: bold;
+    color: #32BDA2 !important;
+    /*text-decoration: none;*/
+    /*margin-top: -20px;*/
+    border-bottom: 1px solid #32BDA2;
+}
+
+.clg-rem-pass-checkbox > md-checkbox.md-checked .md-icon {
+    background-color: #32BDA2 !important;
+    color: white;
+}
+
+.clg-resend-btn-link:not([disabled]) {
+    display: block;
+    height: 48px!important;
+    width: 382px;
+    background-color: #32BDA2 !important;
+    color: white;
+    padding: 6px;
+}
+
+.clg-resend-btn-link {
+    display: block;
+    height: 48px!important;
+    width: 382px;
+    background-color: #597E89 !important;
+    color: white;
+    padding: 6px;
+}
+
+.clgSignUp-send-btn:not([disabled]) {
+    background-color: #32BDA2 !important;
+    color: white !important;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 0px;
+    margin-right: 0px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+}
+
+.clgSignUp-send-btn:not([disabled]):hover {
+    background-color: #2ba189 !important;
+    color: white !important;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.clgSignUp-send-btn,
+.clgSignUp-send-btn:hover {
+    background-color: #597E89 !important;
+    color: white !important;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 0px;
+    margin-right: 0px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+}
+
+.clg-signup-href-font {
+    color: #32BDA2!important;
+}
+
+.clg-signup-href-font:hover {
+    color: #32BDA2!important;
+}
+
+.clgSignUp-img-main-div {
+    height: 45%;
+    width: 45%;
+}
+
+.clgSignUp-img-info-div {
+    font-size: 16px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.clg-signUp-login-btn {
+    border: 1px solid white;
+    color: white;
+    height: 35px;
+    line-height: 0.6;
+    min-height: 35px;
+    min-width: 120px;
+}
+
+.clgSignUp-success-btn {
+    background-color: #32BDA2 !important;
+    color: white;
+    display: block;
+    height: 48px !important;
+    padding: 6px;
+    width: 382px;
+}
+
+.clg-success-img-main-div {
+    height: 70%;
+    width: 100%;
+}
+
+.clg-success-img {
+    height: 52%;
+    width: 42%;
+    margin-top: 50px;
+}
+
+.clgBack-img {
+    height: 100%;
+}
+
+.passSuccess-div {
+    width: 100%;
+    height: 100%;
+}
+
+.token-expiredClg-comp {
+    height: 130px;
+    margin-bottom: 30px;
+    width: 135px;
+}
+
+
+/*Sidenave slider Activity*/
+
+.sideNav-slider-clg-comp {
+    height: 50px;
+    width: 4px;
+    margin: 0;
+    background-color: #526CFD;
+    border: none;
+    transition: .2s ease-in-out;
+    position: absolute;
+    margin-top: -196%;
+    visibility: hidden;
+}
+
+.clg-compOpt-1:hover ~ .sideNav-slider-clg-comp {
+    margin-top: -196%;
+    visibility: visible;
+}
+
+.clg-compOpt-2:hover ~ .sideNav-slider-clg-comp {
+    margin-top: -176%;
+    visibility: visible;
+}
+
+.clg-compOpt-3:hover ~ .sideNav-slider-clg-comp {
+    margin-top: -157%;
+    visibility: visible;
+}
+
+.clg-compOpt-4:hover ~ .sideNav-slider-clg-comp {
+    margin-top: -137%;
+    visibility: visible;
+}
+
+.clg-compOpt-5:hover ~ .sideNav-slider-clg-comp {
+    margin-top: -118%;
+    visibility: visible;
+}
+
+.clg-compOpt-6:hover ~ .sideNav-slider-clg-comp {
+    margin-top: -98%;
+    visibility: visible;
+}
+
+.clg-compOpt-7:hover ~ .sideNav-slider-clg-comp {
+    margin-top: -79%;
+    visibility: visible;
+}
+
+.clg-compOpt-8:hover ~ .sideNav-slider-clg-comp {
+    margin-top: -59%;
+    visibility: visible;
+}
+
+.clg-compOpt-9:hover ~ .sideNav-slider-clg-comp {
+    margin-top: -40%;
+    visibility: visible;
+}
+
+.clg-compOpt-10:hover ~ .sideNav-slider-clg-comp {
+    margin-top: -20%;
+    visibility: visible;
+}
+
+@media screen and (max-width:480px) {
+.clgSignUp-success-btn {
+    width: 250px;
+}
+}
