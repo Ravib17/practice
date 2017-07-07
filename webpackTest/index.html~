@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Webpack App</title>
-  <link href="main.bundle.css" rel="stylesheet"></head>
-  </head>
-  <body> 
- 
-  <script type="text/javascript" src="index.bundle.js"></script>
- <button onclick="buttonclick()">click</button></body>
+  <link href="app.bundle.css" rel="stylesheet"></head>
+  <body>
+  <script type="text/javascript" src="app.bundle.js"></script></body>
+<script type="text/javascript" src="vendor.bundle.js"></script></body>
 </html>

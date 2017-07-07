@@ -1,10 +1,11 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var HtmlWebpackIncludeAssetsPlugin = require("html-webpack-include-assets-plugin");
+var webpack = require('webpack');
 module.exports = {
-  entry: ['./index.js','./index.css','./index2.js'],
+  entry:{ app:['./index.js','./index.css','./index2.js'],
+  vendor: ['angular','jquery']},
   output: {
-    filename: 'index.bundle.js',
+    filename: '[name].bundle.js',
     chunkFilename : './index2.js',
   },
 module: {
@@ -16,8 +17,7 @@ module: {
         ]
 },
 plugins: [
-  new HtmlWebpackPlugin(),
-  new ExtractTextPlugin({filename:"[name].bundle.css"}),
-  new HtmlWebpackIncludeAssetsPlugin({ assets: [], append: true })
+  new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.bundle.js' }),
+  new ExtractTextPlugin({filename:"app.bundle.css"}),
 ]
 };

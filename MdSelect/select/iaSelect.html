@@ -1,0 +1,6 @@
+<div class="select_option">
+    <div id="select_div" class="select" ng-click="toggleOptions()" ng-blur="onBlurSelectDiv()" ng-keydown="onSelectKeydown($event)" tabindex="0">{{selectedOption}}</div>
+    <div id="option_div" class="optionDiv" ng-show="isOptionMenuOption">
+        <div ng-transclude></div>
+    </div>
+</div>

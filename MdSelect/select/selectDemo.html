@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <script src="angular.min.js"></script>
+    <script src="selectApp.js"></script>
+    <style>
+    .optionDiv {
+        position: absolute;
+        top: 35px;
+        left: 35px;
+        background-color: #e1e9ea;
+        height: 90px;
+        width: 120px;
+        z-index: 10;
+        box-shadow: -1px 2px 4px;
+    }
+    .select_option {
+        position :relative;
+    }
+    .select {
+        width: 120px;
+        z-index: 2;
+        box-shadow: -1px 2px 4px;
+    }
+    
+    .option:hover {
+        background: black;
+        color: white;
+    }
+    
+    .option:focus {
+        background: black;
+        color: white;
+    }
+    </style>
+</head>
+
+<body ng-app="selectApp" ng-controller="selectCtrl as ctrl">
+    <form name="form">
+    <ia-select ftc="ctrl.callf" ng-model="ctrl.selectedOption" required name="select" ng-change="ctrl.onValueChanged()">
+    <!--  <ia-option ng-repeat="option in ctrl.optionArray" ng-value="option.class">{{option.name}}</ia-option> -->
+<!-- <ia-option  ng-value="ctrl.optionArray[0].class">{{ctrl.optionArray[0].name}}</ia-option> -->
+        <ia-option   ng-value="ctrl.optionArray[0].class">{{ctrl.optionArray[0].name}}</ia-option>
+        <ia-option   ng-value="ctrl.optionArray[1]">{{ctrl.optionArray[1].name}}</ia-option>
+        <ia-option   value="{{ctrl.optionArray[2].class}}">{{ctrl.optionArray[2].name}}</ia-option>
+        <ia-option   value="{{ctrl.optionArray[3]}}">{{ctrl.optionArray[3].name}}</ia-option>
+        <ia-option   >No option </ia-option>
+        <ia-option value="thisis" >myname</ia-option>.
+        <!-- <ia-option value="ctrl.option.class">{{ctrl.option.name}}</ia-option> -->
+    </ia-select>
+    {{ctrl.selectedOption}}
+    <ia-select ftc="ctrl.callf" ng-model="ctrl.selectedOption2" required name="select" ng-change="ctrl.onValueChanged2()">
+     <ia-option ng-repeat="option in ctrl.optionArray2" ng-value="option.class">{{option.name}}</ia-option>
+    </ia-select>
+     {{ctrl.selectedOption2}}
+<!--     <input type="text" ng-model="ctrl.inp.name" >
+    <input type="text" ng-model="ctrl.inp.class.className" >
+    <input type="text" ng-model="ctrl.inp.class.Id" >
+    <button ng-click="ctrl.add(ctrl.inp)">add </button> -->
+</body>
+
+</html>
